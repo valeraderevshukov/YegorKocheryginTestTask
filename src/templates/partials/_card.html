@@ -1,0 +1,36 @@
+{% import "partials/_mixins.html" as mixins %}
+{% macro call(props) %}
+<!-- begin card -->
+<div class="{% if props.class %}{{props.class}} {% endif %}card js-card">
+	<div class="card__inner">
+		<div class="card__cover">
+			<div class="card__cover-in js-card-cover" style="background-image: url({{props.img or 'https://placecage.com/230/230'}});"></div>
+		</div>
+		<div class="card__content">
+			<div class="card__title js-card-title">{{props.title or 'Adore Delano'}}</div>
+			<div class="card__subtitle js-card-subtitle">{{props.subtitle or 'After Party'}}</div>
+		</div>
+	</div>
+	<div class="card__overlay js-card-overlay"></div>
+	<div class="card__progressbar">
+		<div class="card__progress-default js-card-progress-default"></div>
+		<div class="card__progress-active js-card-progress-active"></div>
+	</div>
+	<div class="card__controls">
+		<div class="card__thumb js-card-thumb" style="background-image: url({{props.img or 'https://placecage.com/230/230'}});"></div>
+		<button class="card__control card__prev js-card-control">
+			{{mixins.icon('prev', 'card__control-icon')}}
+		</button>
+		<button class="card__control card__next js-card-control">
+			{{mixins.icon('next', 'card__control-icon')}}
+		</button>
+	</div>
+	<div class="card__toggle js-card-toggle">
+		<button class="card__toggle-button js-card-toggle-button">
+			{{mixins.icon('play', 'card__toggle-play')}}
+			{{mixins.icon('pause', 'card__toggle-pause')}}
+		</button>
+	</div>
+</div>
+<!-- end card -->
+{% endmacro %}

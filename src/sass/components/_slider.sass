@@ -1,0 +1,54 @@
+.slider
+	color: $white 
+	height: 371px
+	opacity: 0
+	visibility: hidden
+	transition: opacity .3s ease-in-out, visibility .3s ease-in-out
+	+sm
+		height: 273px
+	&.slick-initialized
+		height: auto
+		opacity: 1
+		visibility: visible
+	.slick-dots
+		font-size: 0
+		text-align: center
+		height: 10px
+		line-height: 10px
+		li
+			vertical-align: top
+			display: inline-block
+			&:not(:first-child)
+				margin-left: 10px
+			&.slick-active button
+				transform: scale(2)
+				background-color: $white
+		button
+			position: relative
+			width: 5px
+			height: 5px
+			font-size: 0
+			border-radius: 50% 
+			background-color: rgba($white, 0.5) 
+			vertical-align: middle
+			transition: background-color .3s ease-in-out, transform .3s ease-in-out
+			display: inline-block
+			&:before
+				position: absolute
+				content: ""
+				top: -10px
+				left: -4px
+				right: -4px
+				bottom: -10px 
+	&__slide
+		padding-bottom: 87px
+		+sm
+			padding-bottom: 55px 
+	&__wrap
+		max-width: 544px
+	&__title
+		margin-bottom: 17px
+	&__footer
+		margin-top: 50px
+		+sm
+			margin-top: 30px 

@@ -1,0 +1,33 @@
+.hero
+	position: relative
+	padding: 132px 0 245px
+	overflow: hidden
+	+sm
+		padding: 70px 0
+	&__bg
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-position: 50% 0
+		background-size: cover
+		background-repeat: no-repeat
+		&:before,
+		&:after
+			position: absolute
+			content: ""
+			width: 100vw
+			height: 50vh 
+			background-color: $white 
+		&:before
+			top: auto
+			bottom: 0
+			left: 50%
+			transform-origin: left bottom
+			+rotate(-172)
+		&:after
+			top: 100%
+			right: -50%
+			transform-origin: top left
+			+rotate(-8)

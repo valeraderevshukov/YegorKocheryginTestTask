@@ -1,0 +1,32 @@
+.btn
+	padding: 16px 28px
+	border-radius: 100px
+	color: $blue
+	font-family: $roboto
+	+f(14px, 700, 1.14)
+	letter-spacing: 0
+	vertical-align: top
+	box-shadow: 0 22px 10px -10px rgba(50,79,128,0.26)
+	transition: color .35s ease-in-out, background-color .35s ease-in-out, box-shadow .35s ease-in-out
+	background-color: $white
+	display: inline-block
+	+hover
+		color: $white 
+		box-shadow: 0 22px 10px -10px transparent
+		background-color: $blue 
+	&_blue
+		color: $white 
+		border: 1px solid $blue  
+		box-shadow: none
+		background-color: $blue 
+		+hover
+			color: $blue 
+			background-color: $white 
+	.icon
+		vertical-align: middle
+	.icon-play
+		margin-right: 10px
+		font-size: 20px
+	.icon-arrow-right
+		margin-left: 12px
+		font-size: 14px

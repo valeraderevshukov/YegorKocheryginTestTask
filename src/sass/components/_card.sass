@@ -1,0 +1,174 @@
+$blue: #6AA2FF
+$toggleDuration: 0.22s
+
+.card
+	position: relative
+	overflow: hidden
+	border-radius: 20px 20px 10px 10px
+	width: 230px
+	height: 340px
+	background: $white
+	box-shadow: 0 42px 40px -20px rgba(107,162,255,0.26)
+	font-family: $roboto
+	text-align: center
+	vertical-align: top
+	display: inline-block
+
+	//main image
+	&__cover
+		height: 230px
+		&-in
+			height: 100%
+			+cover
+	
+	//content
+	&__content
+		position: relative
+		z-index: 2
+		padding: 42px 15px 20px
+	&__title,
+	&__subtitle
+		+f(16px, 700, 1.1875)
+		+text-overflow
+		&.is-active
+			color: $white
+	&__title
+		margin-bottom: 4px
+		color: #0D2A63
+	&__subtitle
+		color: #5296A7
+
+	//button play/pause
+	&__toggle
+		position: absolute
+		z-index: 10
+		left: 20px
+		bottom: 75px
+		transform: translate3d(0,0,0)
+		&-button
+			position: relative
+			border: 8px solid rgba($white, 0.6)
+			border-radius: 50%
+			width: 70px
+			height: 70px
+			background: $blue
+			background-clip: padding-box
+			+vertical
+			transform: translate3d(0,0,0)
+			transition: border-color 0.1s, background 0.15s
+			&.is-active
+				border-color: rgba($white, 0)
+				.card
+					&__toggle
+						&-play 
+							opacity: 0
+						&-pause
+							opacity: 1
+							transform: rotate(0)
+							transition: opacity 0.2s 0.2s, transform 0.2s 0.25s
+			&.is-transparent
+				background: none
+		&-play,
+		&-pause
+			position: absolute
+			top: 50%
+			left: 50%
+			fill: $white
+			transition: opacity 0.2s, transform 0.2s
+		&-pause
+			margin: -8px 0 0 -6px
+			opacity: 0
+			font-size: 16px
+			transform: rotate(-45deg)
+		&-play 
+			margin: -9px 0 0 -8px
+			font-size: 18px
+			transform: translate3d(2px,0,0)
+
+	//overlay
+	&__overlay
+		position: absolute
+		top: 115px
+		left: 50%
+		border-radius: 50%
+		width: 54px
+		height: 54px
+		opacity: 0
+		background: $blue
+		box-shadow: 0 0 10px $blue
+		transform: translate3d(-50%,-50%,0)
+		&.is-active
+			opacity: 1
+	
+	//controls
+	&__controls
+		position: absolute
+		top: 45px
+		left: 0
+		right: 0
+	&__thumb
+		margin: 0 auto
+		border-radius: 50%
+		width: 140px
+		height: 140px
+		opacity: 0.2
+		+cover
+	&__thumb,
+	&__control
+		transform: scale(0)
+	&__control 
+		position: absolute
+		top: 50%
+		margin-top: -25px
+		width: 50px
+		height: 50px
+		background: none
+		+cover 
+		&-icon
+			display: inline-block
+			vertical-align: middle
+			fill: $white
+	&__prev
+		left: 30px
+	&__next
+		right: 30px
+
+	//progress
+	&__progressbar
+		position: absolute
+		z-index: 1
+		left: 0
+		right: 0
+		bottom: 80px
+		height: 30px
+	&__progress-default
+		position: absolute
+		top: 50%
+		left: 0
+		right: 0
+		border-bottom: 4px solid rgba($white, 0.4)
+		transform: translate3d(-100%,-50%,0)
+	&__progress-active
+		position: absolute
+		top: 50%
+		left: 0
+		right: 20px
+		margin-top: -2px
+		height: 4px
+		opacity: 0
+		background: $white
+		transform: translate3d(-100%,0,0)
+		transition: opacity 0.25s
+		&.is-active
+			opacity: 1
+		&:before
+			content: ''
+			position: absolute
+			top: 50%
+			left: 100%
+			margin-top: -10px
+			border-radius: 50%
+			width: 20px
+			height: 20px
+			background: $white
+			box-shadow: -8px 0 7px -4px rgba(0,0,0,0.21)

@@ -1,0 +1,25 @@
+<!-- begin header -->
+<header class="header js-header">
+	<div class="header__inner inner">
+		<!-- begin logo -->
+		<a href="#" class="logo"><img src="./img/logo.png" alt="img"></a>
+		<!-- end logo -->
+		<!-- begin navigation -->
+		<nav class="navigation js-navigation">
+			<ul class="menu">
+				{% for text in ['Артисты', 'Релизы', 'Фото', 'Видео', 'О нас', 'События', 'Авторам', 'Контакты'] %}
+				<li class="menu__item"><a href="#" class="menu__link">{{ text }}</a></li>
+				{% endfor %}
+			</ul>
+		</nav>
+		<!-- end navigation -->
+		<!-- begin btn-menu -->
+		<button class="btn-menu js-btn-menu">
+			<span class="btn-menu__line"></span>
+			<span class="btn-menu__line"></span>
+			<span class="btn-menu__line"></span>
+		</button>
+		<!-- end btn-menu -->
+	</div>
+</header>
+<!-- end header -->

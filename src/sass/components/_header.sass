@@ -1,0 +1,99 @@
+.header
+	padding: 30px 0 28px
+	background-color: $white 
+	+sm
+		padding: 10px 0
+.logo
+	float: left
+	width: 50px
+	margin-left: 10px
+	+sm
+		width: 36px 
+	img
+		max-width: 100%
+		display: block
+.navigation
+	float: right
+	margin-top: 20px
+	+md
+		position: absolute
+		top: 0
+		right: -200px
+		margin-top: 0
+		padding: 100px 15px 15px
+		width: 200px
+		height: 100vh
+		z-index: 100
+		text-align: right
+		box-shadow: 0 15px 15px transparent
+		transition: transform .35s ease-in-out, box-shadow .35s ease-in-out
+		background-color: $white 
+	.is-open-menu &
+		+md
+			transform: translateX(-200px)
+			box-shadow: 0 15px 15px rgba($darkBlue, 0.2)
+.menu
+	font-weight: 700
+	font-size: 0 
+	&__item
+		font-size: 16px
+		vertical-align: top
+		display: inline-block
+		+md
+			display: block
+		&:not(:first-child)
+			margin-left: 40px
+			+md
+				margin: 10px 0 0
+	&__link
+		color: $darkBlue 
+		transition: border-color .35s ease-in-out
+		border-bottom: 1px solid transparent 
+		+hover
+			border-bottom-color: currentColor 
+
+.btn-menu
+	position: relative
+	float: right
+	margin-right: -15px
+	width: 52px
+	height: 56px
+	background: none
+	cursor: pointer
+	z-index: 101
+	display: none
+	+sm
+		margin: -6px -15px
+	+md 
+		display: block
+	.header.is-open-menu &
+		&:before
+			transform: translate3d(3px,0,0) rotate(45deg)
+		&:after
+			transform: translate3d(3px,0,0) rotate(-45deg)
+		span 
+			opacity: 0
+			transform: scaleX(0.5)
+	span,
+	&:before,
+	&:after
+		position: absolute
+		top: 50%
+		left: 50%
+		margin-left: -10px
+		border-top: 2px solid $darkBlue
+		width: 20px
+	&:before,
+	&:after
+		content: ''
+		transition: transform 0.3s
+	span 
+		margin-top: -1px
+		transition: opacity 0.3s, transform 0.3s
+		transform-origin: left center
+	&:before
+		margin-top: -8px
+		transform-origin: left top
+	&:after
+		margin-top: 6px
+		transform-origin: left bottom

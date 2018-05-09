@@ -1,0 +1,7 @@
+ProjectTitle: test-task
+
+PageList:
+- file: page.html
+  ready: 100
+- file: card.html
+  ready: 100
