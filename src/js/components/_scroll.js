@@ -66,8 +66,8 @@ DOC.ready(function() {
     }, 0);
 
   const fullLogo = $('.js-full-logo');
-  const fullLogoHeight = fullLogo.height();
-  const fullLogoTop = fullLogo.position().top - fullLogoHeight;
+  const fullLogoHeight = fullLogo.outerHeight();
+  const fullLogoTop = fullLogo.offset().top - fullLogoHeight + 12;
   logoInner.on('scroll', function(e) { 
     const offsetTop = $(this).scrollTop();
     if (offsetTop >= fullLogoTop) {
