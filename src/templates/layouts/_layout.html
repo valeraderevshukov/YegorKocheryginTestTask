@@ -12,11 +12,13 @@
     <link rel="stylesheet" media="all" href="css/app.css">
     {# {% include "../partials/_media-tags.html" %} #}
   </head>
-  <body class="js-smooth-wheel">
+  <body>
 
     <!-- BEGIN content -->
-    <div class="out js-out-inner">
-      {% block content %}{% endblock %}
+    <div class="out js-smooth-wheel">
+      <div class="out__inner js-out-inner">
+        {% block content %}{% endblock %}
+      </div>
     </div>
     <!-- END content -->
 
