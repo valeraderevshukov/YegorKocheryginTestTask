@@ -1,10 +1,80 @@
 .header
-	padding: 30px 0 28px
-	background-color: $white 
-	+sm
-		padding: 10px 0
-.logo
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 100
+	width: 100%
+	pointer-events: none
+	&__inner
+		position: relative
+		z-index: 1
+	&__overlay
+		position: absolute
+		top: 0
+		left: 0
+		right: 17px
+		height: 120px
+		background-color: $white 
+.logos
 	float: left
+	width: 226px
+	overflow: hidden
+	pointer-events: initial
+	&__inner
+		height: 120px
+		width: 250px
+		overflow: auto
+	&__wrap
+		position: relative
+		width: 226px
+.full-logo
+	position: absolute
+	top: 122px
+	left: 0
+	font-size: 0
+	&.is-fixed
+		position: fixed
+		top: 30px
+		left: 0
+		width: 100%
+	&__inner
+		.is-fixed.full-logo &
+			margin: 0 auto
+			max-width: 1070px
+			+clr
+.logo-m
+	position: relative
+	width: 227px
+	overflow: hidden
+	display: block
+	+clr
+	img
+		display: block
+	&__symbol
+		float: left
+		position: relative
+		z-index: 1 
+		display: block
+		background-color: $white 
+		img
+			max-width: 100%
+			width: 42px
+	&__musictown,
+	&__records
+		position: absolute
+		left: 57px
+		transform: translateX(-227px)
+		opacity: 0
+	&__musictown
+		top: 6px
+		width: 167px
+	&__records
+		top: 30px
+		width: 131px
+
+.logo
+	position: absolute
+	top: 30px
 	width: 50px
 	margin-left: 10px
 	+sm
@@ -14,7 +84,8 @@
 		display: block
 .navigation
 	float: right
-	margin-top: 20px
+	margin-top: 45px
+	pointer-events: initial
 	+md
 		position: absolute
 		top: 0
@@ -55,15 +126,16 @@
 .btn-menu
 	position: relative
 	float: right
-	margin-right: -15px
+	margin: 28px -15px 0 0
 	width: 52px
 	height: 56px
 	background: none
 	cursor: pointer
+	pointer-events: initial
 	z-index: 101
 	display: none
 	+sm
-		margin: -6px -15px
+		margin: 21px -15px
 	+md 
 		display: block
 	.header.is-open-menu &

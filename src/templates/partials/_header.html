@@ -1,12 +1,34 @@
 <!-- begin header -->
 <header class="header js-header">
+	<div class="header__overlay js-header-overlay"></div>
 	<div class="header__inner inner">
-		<!-- begin logo -->
-		<a href="#" class="logo"><img src="./img/logo.png" alt="img"></a>
-		<!-- end logo -->
+		<!-- begin logos -->
+		<div class="logos js-logos">
+			<div class="logos__inner js-logos-inner">
+				<div class="logos__wrap js-logos-wrap">
+					<!-- begin logo -->
+					<a href="#" class="logo">
+						<img src="./img/logo.png" alt="img">
+					</a>
+					<!-- end logo -->
+					<div class="full-logo js-full-logo">
+						<div class="full-logo__inner">
+							<a href="#" class="logo-m js-logo-m">
+								<span class="logo-m__symbol">
+									<img class="logo-m__symbol" src="./img/logo-m.png" alt="img">
+								</span>
+								<img class="logo-m__musictown js-logo-m-text" src="./img/musictown.png" alt="img">
+								<img class="logo-m__records js-logo-m-text" src="./img/records.png" alt="img">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end logos -->
 		<!-- begin navigation -->
 		<nav class="navigation js-navigation">
-			<ul class="menu">
+			<ul class="menu js-menu">
 				{% for text in ['Артисты', 'Релизы', 'Фото', 'Видео', 'О нас', 'События', 'Авторам', 'Контакты'] %}
 				<li class="menu__item"><a href="#" class="menu__link">{{ text }}</a></li>
 				{% endfor %}
