@@ -4,7 +4,9 @@
 	left: 0
 	z-index: 100
 	width: 100%
-	pointer-events: none
+	+md
+		height: 90px
+		background-color: $white 
 	&__inner
 		position: relative
 		z-index: 1
@@ -15,13 +17,19 @@
 		right: 0
 		height: 120px
 		background-color: $white 
+		+md
+			display: none
 
 .logo
 	position: relative
+	z-index: 101
 	float: left
 	width: 195px
 	overflow: hidden
 	margin-top: 30px
+	+md
+		margin-top: 22px 
+		transform: none !important
 	img
 		display: block
 	&__symbol
@@ -30,26 +38,39 @@
 		width: 50px
 		background-color: $white
 		display: block
+		+md
+			width: 35px
 		img
 			max-width: 100%
 			display: block
 	&__descrription
 		margin-top: 4px
 		width: 50px
+		+md
+			width: 35px
 	&__musictown,
 	&__records
 		position: absolute
 		left: 57px
 		transform: translateX(-227px)
 		opacity: 0
+		+md
+			left: 42px
+			transform: translateX(-190px)
 	&__musictown
 		top: 14px
 		width: 134px
 		display: none
+		+md
+			top: 11px
+			width: 90px
 	&__records
 		top: 35px
 		width: 104px
 		display: none
+		+md
+			top: 27px 
+			width: 70px
 
 .navigation
 	float: right
@@ -58,20 +79,21 @@
 	+md
 		position: absolute
 		top: 0
-		right: -200px
+		left: 0
 		margin-top: 0
 		padding: 100px 15px 15px
-		width: 200px
+		width: 100%
 		height: 100vh
 		z-index: 100
-		text-align: right
-		box-shadow: 0 15px 15px transparent
-		transition: transform .35s ease-in-out, box-shadow .35s ease-in-out
+		text-align: center
+		opacity: 0
+		visibility: hidden
+		transition: opacity .35s ease-in-out, visibility .35s ease-in-out
 		background-color: $white 
 	.is-open-menu &
 		+md
-			transform: translateX(-200px)
-			box-shadow: 0 15px 15px rgba($darkBlue, 0.2)
+			opacity: 1
+			visibility: visible
 .menu
 	font-weight: 700
 	font-size: 0 
@@ -80,11 +102,14 @@
 		vertical-align: top
 		display: inline-block
 		+md
+			font-weight: 400 
+			font-size: 20px
+			letter-spacing: 0
 			display: block
 		&:not(:first-child)
 			margin-left: 40px
 			+md
-				margin: 10px 0 0
+				margin: 35px 0 0
 	&__link
 		color: $darkBlue 
 		transition: border-color .35s ease-in-out
@@ -103,9 +128,9 @@
 	pointer-events: initial
 	z-index: 101
 	display: none
-	+sm
-		margin: 28px -15px 0 0
 	+md 
+		margin: 15px -15px 0 0 
+		transform: none !important
 		display: block
 	.header.is-open-menu &
 		&:before

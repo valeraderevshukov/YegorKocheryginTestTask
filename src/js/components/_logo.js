@@ -1,4 +1,4 @@
-import { DOC, WIN, HTMLBODY } from '../_constants';
+import { DOC, WIN } from '../_constants';
 import { SCROLL_WIDTH } from '../_utils';
 import { TimelineMax } from 'gsap';
 
@@ -35,10 +35,13 @@ logoTimeLime
     x: 0,
     opacity: 1,
     ease: 'cubic-bezier(0.23, 1, 0.32, 1)'
-  }, 0.1);
+  }, 0.1)
+  .eventCallback('onReverseComplete', () => {
+    TweenMax.set([descrription, headerOverlay, logo, menu, menuBtn, text], { clearProps:'all' });
+  });
 
 WIN.on('scroll', function() { 
-  let top = HTMLBODY.scrollTop();
+  let top = DOC.scrollTop();
   console.log(top);
   (top >= 1)
     ? logoTimeLime.play()
